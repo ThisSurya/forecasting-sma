@@ -12,7 +12,6 @@ def preprocessing():
     dataset['PESAN'] = dataset['PESAN'].astype(int)
 
     bulan = [x for x in range(0,12)]
-    sum_order = [0 for x in range(0,12)]
 
     data_permonth = [0 for x in range(0, 12)]
 
@@ -24,7 +23,7 @@ def preprocessing():
     dataset = pd.concat(data_permonth)
     dataset = dataset.reset_index(drop=True)
 
-    return dataset, sum_order
+    return dataset
 
 def product_spec(dataset):
     kode_produk = dataset['KODEPRODUK'].unique()
