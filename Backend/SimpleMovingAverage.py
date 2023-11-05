@@ -9,12 +9,13 @@ from sklearn.preprocessing import StandardScaler
 from scipy.spatial.distance import cdist
 from scipy.stats import pearsonr
 
-def sum_permonth():
+def sum_permonth(dataset):
     i = 0
-    for x in dataset['BLN']:
-    sum_order[x-1] += dataset['PESAN'][i]
-        i += 1
     sum_order = [0 for x in range(0,12)]
+    for x in dataset['BLN']:
+        sum_order[x-1] += dataset['PESAN'][i]
+        i += 1
+        
     return sum_order
 
 def Process(sum_order):
